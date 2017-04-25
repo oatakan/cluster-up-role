@@ -46,9 +46,10 @@
 
 - name: Move the oc executable to the requested directory 
   copy:
-    src: "{{ temp_output.stdout }}/{{ archive_path }}/oc" 
+    src: "{{ temp_output.stdout }}/{{ archive_path }}oc"
     dest: "{{ openshift_client_dest }}/oc"  
-    mode: 0775 
+    mode: 0775
+    remote_src: True
   become: yes
   become_user: root 
 
